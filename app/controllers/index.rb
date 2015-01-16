@@ -3,6 +3,3 @@ get '/' do
   erb :index
 end
 
-get '/info' do
-  Demo.new(self).info
-end
