@@ -1,0 +1,10 @@
+<div class="edit_user_profile">
+<form action="/user/:<%= @user.id%>" method="POST">
+  <input type="hidden" name="_method" value="PUT"><br>
+  NAME:<input type="text" name="user[name]"><br>
+  AGE: <input type="text" name="user[age]"><br>
+  GENDER:<input type="text" name="user[gender]"><br>
+  LOCATION:<input type="text" name="user[location]"><br>
+  EMAIL:<input type="text" name="user[email]" value="<%=@user.email %>">
+</form>
+</div>
