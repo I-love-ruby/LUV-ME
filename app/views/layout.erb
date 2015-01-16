@@ -21,9 +21,12 @@
 </head>
 <body>
   <div id="header">
-    <!-- IF User is not logged in, show login link -->
-    <!-- ELSE Show User.name linked to User profile -->
-    <a href="/login">Login</a>
+    <% if current_user %>
+    <a href="/user/<%= current_user.id%>/"><%= current_user.name %></a> | <a href="/signout">Logout</a>
+    <% else %>
+    <a id="go_login" rel="leanModal" href="#login">Login</a>
+
+    <% end %>
   </div>
   <%= yield %>
 </body>
