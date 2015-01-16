@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   # Remember to create a migration!
+  has_secure_password
+
   has_many :messages
 
   has_many :sent_messages, foreign_key: "sender_id", class_name: "Message"
