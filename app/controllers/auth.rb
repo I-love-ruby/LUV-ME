@@ -1,10 +1,10 @@
 post '/login' do
-  user = User.find_by(name: params[:user][:name])
+  user = User.find_by(name: params[:user][:email])
 
   if user.try(:authenticate, params[:user][:password])
     session[:user_id] = user.id
   end
-  redirect '/'
+  redirect "/"
 end
 
 post '/signup' do
