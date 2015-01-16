@@ -1,23 +1,31 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, <%= em("world!") %></p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+<a id="go" rel="leanModal" name="signup" href="#signup">Signup</a>
 </div>
+
+
+<div id="signup" style="position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
+      <div id="signup-ct">
+        <div id="signup-header">
+          <h2>Create a new account</h2>
+          <p>It's simple, and free.</p>
+          <a class="modal_close" href="#"></a>
+        </div>
+        <form action="">
+          <div class="txt-fld">
+            <label for="">Username</label>
+            <input id="" class="good_input" name="" type="text">
+          </div>
+          <div class="txt-fld">
+            <label for="">Email address</label>
+            <input id="" name="" type="text">
+          </div>
+          <div class="txt-fld">
+            <label for="">Password</label>
+            <input id="" name="" type="text">
+          </div>
+          <div class="btn-fld">
+            <button type="submit">Sign Up »</button>
+          </div>
+        </form>
+      </div>
+    </div>
