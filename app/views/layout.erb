@@ -20,6 +20,11 @@
   <title></title>
 </head>
 <body>
+  <div id="header">
+    <!-- IF User is not logged in, show login link -->
+    <!-- ELSE Show User.name linked to User profile -->
+    <a href="/login">Login</a>
+  </div>
   <%= yield %>
 </body>
 </html>
