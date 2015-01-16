@@ -15,5 +15,15 @@
   <br>
   <div class= "demographics">
   </div>
+  <form action="/user/<%=@user.id%>/edit" method="GET">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="submit" value="EDIT">
+  </form>
+
+  <form action="/user/<%= @user.id%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE">
+  </form>
+
 
 </div>
