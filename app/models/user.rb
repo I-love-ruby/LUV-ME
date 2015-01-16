@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
 
   has_one :survey
 
+  validates :name, presence:true
+  validates :email, presence:true
+
 end
