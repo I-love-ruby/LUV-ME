@@ -10,18 +10,22 @@
           <p>It's simple, and free.</p>
           <a class="modal_close" href="#"></a>
         </div>
-        <form action="">
+        <form action="/signup" method="POST">
           <div class="txt-fld">
-            <label for="">Username</label>
-            <input id="" class="good_input" name="" type="text">
+            <label for="">Name</label>
+            <input name="user[name]" type="text">
           </div>
           <div class="txt-fld">
             <label for="">Email address</label>
-            <input id="" name="" type="text">
+            <input name="user[email]" type="text">
           </div>
           <div class="txt-fld">
             <label for="">Password</label>
-            <input id="" name="" type="text">
+            <input name="user[password]" type="password">
+          </div>
+           <div class="txt-fld">
+            <label for="">Confirm Password</label>
+            <input name="user[password_confirmation]" type="password">
           </div>
           <div class="btn-fld">
             <button type="submit">Sign Up »</button>
