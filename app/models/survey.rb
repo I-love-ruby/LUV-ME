@@ -1,4 +1,4 @@
 class Survey < ActiveRecord::Base
   # Remember to create a migration!
-  has_one :user
+  belongs_to :user
 end
