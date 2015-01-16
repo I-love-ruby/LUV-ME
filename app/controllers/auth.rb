@@ -13,9 +13,6 @@ post '/login' do
   end
 end
 
-get '/signup' do
-  erb :'auth/signup'
-end
 
 post '/signup' do
   user = User.create(params[:user])
@@ -24,7 +21,7 @@ post '/signup' do
     session[:user_id] = user.id
     redirect "/"
   else
-    redirect "/signup"
+    redirect "/"
   end
 end
 
