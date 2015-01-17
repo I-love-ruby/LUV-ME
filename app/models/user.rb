@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 
   has_one :survey
 
+  has_many :selections
+  has_many :answers, through: :selections
+
   validates :name, presence:true
   validates :email, presence:true
 

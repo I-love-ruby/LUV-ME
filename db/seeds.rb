@@ -1,6 +1,6 @@
-answer = ["a", "b", "c", "d"]
+# answer = ["a", "b", "c", "d"]
 
-num = 1
+# num = 1
 
 10.times do
   password = Faker::Internet.password
@@ -14,9 +14,9 @@ num = 1
               pic_url: Faker::Avatar.image,
               tagline: Faker::Lorem.sentence,
               about: Faker::Lorem.paragraph )
-  looped_user = User.find(num)
-  looped_user.survey = Survey.create(answer1: answer.sample, answer2: answer.sample, answer3: answer.sample)
-  num += 1
+  # looped_user = User.find(num)
+  # looped_user.survey = Survey.create(answer1: answer.sample, answer2: answer.sample, answer3: answer.sample)
+  # num += 1
 end
 
 
