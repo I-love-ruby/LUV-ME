@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :selections
   has_many :answers, through: :selections
 
+  has_many :desires
+  has_many :relationships, through: :desires
+
   validates :name, presence:true
   validates :email, presence:true
 
