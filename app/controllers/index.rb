@@ -16,7 +16,7 @@ get '/user/:id/edit' do
 end
 
 put '/user/:id' do |id|
-  user = User.find_by(id)
+  user = User.find(id)
   user.update(params[:user])
   redirect("/user/#{user.id}")
 end
