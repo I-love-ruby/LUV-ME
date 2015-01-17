@@ -7,6 +7,7 @@ num = 1
   User.create(name: Faker::Name.name,
               age: rand(1..100),
               gender: ["male","female"].sample,
+              orientation: ["Lesbian","Gay","Bisexual","Pansexual", "Straight", "Asexual", "Prefer not to Say"].sample,
               location: Faker::Address.state,
               password:  password,
               password_digest: password,
