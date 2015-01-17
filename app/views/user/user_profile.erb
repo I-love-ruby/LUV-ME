@@ -5,16 +5,24 @@
   <div class="profile_pic">
     <img src="<%= @user.pic_url %>"/>
   </div>
-  <div class="about">
-    <%= @user.about %>
-  </div>
-  <br>
   <div class="tagline">
-    <%= @user.tagline %>
+    TAG LINE: <%= @user.tagline %>
   </div>
   <br>
-  <div class= "demographics">
+  <div class="about">
+    ABOUT ME: <%= @user.about %>
   </div>
+  <br>
+
+   <div class="gender">
+    GENDER: <%= @user.gender %>
+  </div>
+  <br>
+   <div class="orientation">
+    ORIENTATION: <%= @user.orientation %>
+  </div>
+  <br>
+
   <form action="/user/<%=@user.id%>/edit" method="GET">
     <input type="hidden" name="_method" value="PUT">
     <input type="submit" value="EDIT">
