@@ -9,23 +9,3 @@ get '/user/:id' do
 end
 
 
-#update(edit) a user profile
-get '/user/:id/edit' do
-  @user = User.find_by(id: params[:id])
-  erb :'user/edit'
-end
-
-put '/user/:id' do |id|
-  user = User.find(id)
-  user.update(params[:user])
-  redirect("/user/#{user.id}")
-end
-
-delete '/user/:id' do |id|
-  User.find(id).destroy
-  redirect('/')
-end
-
-
-
-
