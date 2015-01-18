@@ -1,0 +1,13 @@
+<div class="dashboard">
+<div class="left_dashboard">
+  <div class="profile_pic"><img src="<%= @user.pic_url %>"></div></center>
+  <div class="user_welcome">Hello, <%= @user.name %>!</div>
+  <div class="u_r_luvd">YOU ARE LUV-D</div></div>
+  <ul>
+<li><font color="#000000">✉</font> MESSAGES </li>
+<li><font color="#7f4cff">✎</font> <a href="/user/<%=@user.id %>/survey">TAKE A SURVEY</a> </li>
+<li><font color="#FF5DBF">♥</font> VIEW YOUR MATCHES </li>
+<li><font color="#FFB732">♛</font> <a href="/user/<%=@user.id%>/edit">EDIT YOUR PROFILE</a></li>
+<li><font color="#e30000">☓</font> <a href="/user/<%=@user.id%>/delete">DELETE YOUR ACCOUNT</a> </li>
+</ul>
+</div>
