@@ -1,0 +1,11 @@
+<form action="/user/<%= current_user.id %>/survey" method="POST">
+<% @questions.each do |question| %>
+  <%= question.description %>
+  <% question.answers.each do |answer| %>
+    <ul>
+      <li><input type="radio" name="answer[<%= question.id %>]" value="<%= answer.id %>"><%= answer.description %></li>
+    </ul>
+  <% end %>
+<% end %>
+<input type="submit" value="Submit">
+</form>

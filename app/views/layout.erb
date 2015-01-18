@@ -22,7 +22,7 @@
 <body>
   <div id="header">
     <% if current_user %>
-    <a href="/user/<%= current_user.id%>/"><%= current_user.name %></a> | <a href="/signout">Logout</a>
+    <a href="/user/<%= current_user.id%>"><%= current_user.name %></a> | <a href="/signout">Logout</a>
     <% else %>
     <a id="go_login" rel="leanModal" href="#login">Login</a>
     <% end %>
