@@ -1,23 +1,58 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, <%= em("world!") %></p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+<a id="go_signup" rel="leanModal" name="signup" href="#signup">Signup</a>
 </div>
+
+
+<div id="signup" style="position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
+      <div id="signup-ct">
+        <div id="signup-header">
+          <h2>Create a new account</h2>
+          <p>It's simple, and free.</p>
+          <a class="modal_close" href="#"></a>
+        </div>
+        <form action="/signup" method="POST">
+          <div class="txt-fld">
+            <label for="">Name</label>
+            <input name="user[name]" type="text">
+          </div>
+          <div class="txt-fld">
+            <label for="">Email address</label>
+            <input name="user[email]" type="text">
+          </div>
+          <div class="txt-fld">
+            <label for="">Password</label>
+            <input name="user[password]" type="password">
+          </div>
+           <div class="txt-fld">
+            <label for="">Confirm Password</label>
+            <input name="user[password_confirmation]" type="password">
+          </div>
+          <div class="btn-fld">
+            <button type="submit">Sign Up »</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+<div id="login" style="position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
+      <div id="login-ct">
+        <div id="login-header">
+          <h2>Login</h2>
+          <p>Be luv-d.</p>
+          <a class="modal_close" href="#"></a>
+        </div>
+        <form action="/login" method="POST">
+          <div class="txt-fld">
+            <label for="">Email address</label>
+            <input name="user[email]" type="text">
+          </div>
+          <div class="txt-fld">
+            <label for="">Password</label>
+            <input name="user[password]" type="password">
+          </div>
+          <div class="btn-fld">
+            <button type="submit">Log In »</button>
+          </div>
+        </form>
+      </div>
+    </div>
