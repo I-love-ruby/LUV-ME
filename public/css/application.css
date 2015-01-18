@@ -241,3 +241,46 @@ ul {
   text-align: center;
   display: inline;
 }
+
+.replybox {
+  text-align: right;
+  padding: 10px;
+}
+
+.replybox .replyform {
+  display:none;
+  padding: 10px;
+  }
+
+.sendbox {
+  padding: 10px;
+}
+
+.sendbox .sendform {
+  display:none;
+  padding: 10px;
+  }
+
+.messages {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.sent_messages {
+  float:right;
+  width: 300px;
+}
+
+.received_messages {
+  float: left;
+  width: 300px;
+  border-right: 1px dotted #FFFFFF;
+  height: 100%;
+  padding-right: 50px;
+}
+
+.message_border {
+  border-bottom: 1px dotted #FFFFFF;
+  width: 300px;
+}
