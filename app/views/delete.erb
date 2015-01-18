@@ -1,0 +1,8 @@
+<div class="delete_account">
+Are you sure you want to delete your account?
+<form action="/user/<%= @user.id %>/delete" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="» Yes, I no longer wish 2B LUV-D."><br />
+    » <a href="/user/<%= @user.id %>/home">No, please keep LUV-ING me.</a>
+</form>
+</div>
