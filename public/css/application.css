@@ -284,3 +284,9 @@ ul {
   border-bottom: 1px dotted #FFFFFF;
   width: 300px;
 }
+
+.survey {
+  margin: 0 auto;
+  padding-left: 500px;
+  padding-top: 20px;
+}
