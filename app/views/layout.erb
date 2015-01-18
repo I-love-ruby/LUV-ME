@@ -30,7 +30,8 @@
     <a href="/user/<%= current_user.id%>"><%= current_user.name %></a> | <a href="/signout">Logout</a>
     <% else %>
     <a id="go_login" rel="leanModal" href="#login">LOGIN</a>
-    <% end %></span>
+    <% end %>
+  </span>
   </div>
 
   <%= yield %>
