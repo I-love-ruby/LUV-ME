@@ -1,10 +1,10 @@
-<div class="container">
-  <div class="welcome">
-    Hello, <%= @user.name %>
-  </div>
+<div class="profile">
+  <div class="profile_left">
   <div class="profile_pic">
     <img src="<%= @user.pic_url %>"/>
   </div>
+  <div class="user_welcome">
+    <%= @user.name %></div>
   <div class="tagline">
     TAG LINE: <%= @user.tagline %>
   </div>
@@ -21,17 +21,9 @@
    <div class="orientation">
     ORIENTATION: <%= @user.orientation %>
   </div>
-  <br>
-
-  <form action="/user/<%=@user.id%>/edit" method="GET">
-    <input type="hidden" name="_method" value="PUT">
-    <input type="submit" value="EDIT">
-  </form>
-
-  <form action="/user/<%= @user.id%>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="DELETE">
-  </form>
-
+</div>
+<div class="matches">
+  <span class="matches_header"><font color="#FF5DBF">♥</font> MATCHES <font color="#FF5DBF">♥</font></span>
+  </div>
 
 </div>

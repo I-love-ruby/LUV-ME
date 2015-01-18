@@ -17,16 +17,23 @@
 
   <script type="text/javascript" src="/js/jquery.leanModal.min.js"></script>
 
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400' rel='stylesheet' type='text/css'>
+
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <title></title>
 </head>
 <body>
   <div id="header">
-    <% if current_user %>
+    <span style="float: left;"><a href="/">LUV ME</a></span>
+    <span style="float: right;">
+      <% if current_user %>
     <a href="/user/<%= current_user.id%>"><%= current_user.name %></a> | <a href="/signout">Logout</a>
     <% else %>
-    <a id="go_login" rel="leanModal" href="#login">Login</a>
+    <a id="go_login" rel="leanModal" href="#login">LOGIN</a>
     <% end %>
+  </span>
   </div>
+
   <%= yield %>
 </body>
 </html>
