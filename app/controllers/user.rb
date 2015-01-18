@@ -48,7 +48,13 @@ post '/user/:id/survey' do |id|
 end
 
 
+get '/user/all' do
+  @users = User.all
+  erb :'/user/all'
+end
+
 get '/user/:id' do
   @user = User.find_by(id: params[:id])
   erb :'user/user_profile'
 end
+

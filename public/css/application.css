@@ -159,6 +159,11 @@ img {
     width: auto;
 }
 
+.all_img {
+  display: inline;
+}
+
+
 ul {
   list-style: none;
 }
@@ -228,4 +233,11 @@ ul {
 
 .matches_header {
   border-bottom: 3px dotted #FFFFFF;
+}
+
+.all {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  display: inline;
 }
