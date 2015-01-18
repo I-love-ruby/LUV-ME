@@ -48,7 +48,8 @@ end
 # Survey routes
 get '/user/:id/survey' do |id|
   @user = User.find(id)
-  @survey = Survey.find(id)
+  # @survey = Survey.find(id)
+  @survey = Survey.where(id: id).first_or_create
   @questions = @survey.questions
   erb :'/user/survey'
 end
