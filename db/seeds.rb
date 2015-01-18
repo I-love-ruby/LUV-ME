@@ -43,4 +43,20 @@ end
 # survey.questions.find(5).answers.create(description: "Coffee")
 # survey.questions.find(5).answers.create(description: "Tea")
 
-10.times{|i| Survey.create(title: "Initial Survey", user_id: i)}
+survey_qs = ["Tupac or Biggie?", "Pink or Pink?", "Left-handed or Right-handed?", "Cats or Dogs?", "Coffee or Tea?"]
+survey_ans = [["Tupac","Biggie"],["Pink","Pinker Pink"],["Left-handed", "Right-handed"],["Cats","Dogs"],["Coffee","Tea"]]
+
+
+Survey.create(title: "Initial Survey")
+
+10.times do  |i|
+  Survey.first.questions.create(description: survey_qs[i])
+end
+
+num_questions = survey_qs.length
+
+num_questions.times do |i|
+  Survey.first.questions.find(i + 1).answers.create(description: survey_ans[i][0])
+  Survey.first.questions.find(i + 1).answers.create(description: survey_ans[i][1])
+end
+
