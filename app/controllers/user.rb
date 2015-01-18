@@ -45,14 +45,14 @@ get '/user/:id/home' do
 end
 
 # Survey routes
-get '/user/:id/survey/new' do |id|
+get '/user/:id/survey' do |id|
   @user = User.find(id)
   @survey = Survey.find(1)
   @questions = @survey.questions
   erb :'/user/survey'
 end
 
-post '/user/:id/survey/new' do |id|
+post '/user/:id/survey' do |id|
   @user = User.find(id)
   @user.selections.destroy
   params[:answer].each do |k, v|
