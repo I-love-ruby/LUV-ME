@@ -46,8 +46,6 @@ end
 survey_qs = ["Tupac or Biggie?", "Pink or Pink?", "Left-handed or Right-handed?", "Cats or Dogs?", "Coffee or Tea?"]
 survey_ans = [["Tupac","Biggie"],["Pink","Pinker Pink"],["Left-handed", "Right-handed"],["Cats","Dogs"],["Coffee","Tea"]]
 
-
-# 10.times{ |i| Survey.first.questions.create(description: survey_qs[i]) }
 num_questions = survey_qs.length
 
 10.times{ |i| Survey.create(title: "Initial Survey") }
@@ -70,32 +68,4 @@ Survey.all.each do |survey|
   survey.update(user_id: count)
   count += 1
 end
-
-# Survey.all.each do |survey|
-#   survey.questions.each do |question|
-#   num_questions.times do |i|
-#     question.answers << Answer.create(description: survey_ans[i][0])
-#     question.answers << Answer.create(description: survey_ans[i][1])
-#   end
-# end
-# end
-
-# count = 0
-# Survey.all.each do |survey|
-#   survey.questions.each do |question|
-#     question.answers.create(description: survey_ans[count][0])
-#     question.answers.create(description: survey_ans[count][1])
-#   end
-#   count += 1
-# end
-
-
-
-
-# Survey.all.each do |survey|
-#   num_questions.times do |i|
-#     survey.questions.find(i + 1).answers.create(description: survey_ans[i][0])
-#     survey.questions.find(i + 1).answers.create(description: survey_ans[i][1])
-#   end
-# end
 
