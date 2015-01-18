@@ -40,16 +40,23 @@ end
 
 # Dashboard
 
-get '/user/:id/home'
+get '/user/:id/home' do
   erb :home
 end
 
 # Survey routes
-get '/user/:id/survey/new' do
+get '/user/:id/survey/new' do |id|
+  @user = User.find(id)
+  @survey = Survey.find(1)
+  @questions = @survey.questions
   erb :'/user/survey'
 end
 
 post '/user/:id/survey/new' do |id|
   @user = User.find(id)
-  Survey.create(params[:survey])
+  @user.selections.destroy
+  params[:answer].each do |k, v|
+    @user.selections.find_or_create_by(answer_id: v)
+  end
+  redirect "/user/#{@user.id}/home"
 end
