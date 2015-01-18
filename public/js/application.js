@@ -5,4 +5,20 @@ $(document).ready(function() {
     $("#go_login").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" })
     $("#go_signup").leanModal({ top : 200, overlay : 0.4, closeButton: ".modal_close" })
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+    $(function(){
+       $('.replybox .replylink').click(function(){
+          $(this).hide();
+          $('.replybox .replyform').show();
+          return false;
+       });
+    });
+
+    $(function(){
+       $('.sendbox .sendlink').click(function(){
+          $(this).hide();
+          $('.sendbox .sendform').show();
+          return false;
+       });
+    });
 });

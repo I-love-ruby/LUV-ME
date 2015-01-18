@@ -4,7 +4,8 @@
     <img src="<%= @user.pic_url %>"/>
   </div>
   <div class="user_welcome">
-    <%= @user.name %></div>
+    <%= @user.name %>
+  </div>
   <div class="tagline">
     TAG LINE: <%= @user.tagline %>
   </div>
@@ -21,9 +22,19 @@
    <div class="orientation">
     ORIENTATION: <%= @user.orientation %>
   </div>
+  <div class="messages">
+      <div class="sendbox">
+       <a href="#" class="sendlink">SEND ME A MESSAGE</a>
+       <div class="sendform">
+          <form action="/user/<%= @user.id %>/reply" method="POST">
+          <input type="hidden" name="reply[receiver_id]" value="<%= @user.id %>">
+          <textarea type="text" name="reply[content]"/></textarea><br /><br />
+          <input type="submit" value="Send">
+       </div>
+    </div>
+  </div>
 </div>
 <div class="matches">
   <span class="matches_header"><font color="#FF5DBF">♥</font> MATCHES <font color="#FF5DBF">♥</font></span>
   </div>
-
 </div>

@@ -22,7 +22,22 @@ delete '/user/:id/delete' do |id|
   redirect('/')
 end
 
+# messages
+get '/user/:id/messages' do |id|
+  @user = User.find(id)
+  erb :'/message/all'
+end
 
+get '/user/:id/reply' do |id|
+  @sender = User.find(id)
+  erb :'/message/reply'
+end
+
+post '/user/:id/reply' do |id|
+  sender = User.find(id)
+  sender.sent_messages.create(params[:reply])
+  redirect "/user/#{sender.id}/messages"
+end
 # Dashboard
 
 get '/user/:id/home' do |id|
