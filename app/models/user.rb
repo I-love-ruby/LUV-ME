@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   # Remember to create a migration!
   has_secure_password
 
-  has_many :messages
-
   has_many :sent_messages, foreign_key: "sender_id", class_name: "Message"
   has_many :received_messages, foreign_key: "receiver_id", class_name: "Message"
 
@@ -18,8 +16,12 @@ class User < ActiveRecord::Base
   has_many :desires
   has_many :relationships, through: :desires
 
-  validates :name, presence:true
-  validates :email, presence:true
-  validates :email, format: {with: /[1-9]*[a-z]*\d*@[a-zA-z]*.[a-z]{3}/}
+
+  # validates :name, presence:true
+  # validates :email, presence:true
+  # validates :email, format: {with: /[1-9]*[a-z]*\d*@[a-zA-z]*.[a-z]{3}/}
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
+
 
 end
