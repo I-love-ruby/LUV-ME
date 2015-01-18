@@ -58,14 +58,27 @@ Survey.all.each do |survey|
   end
 end
 
+count = 0
 Survey.all.each do |survey|
   survey.questions.each do |question|
-  num_questions.times do |i|
-    question.answers << Answer.create(description: "whatever")
-    question.answers << Answer.create(description: "your mom")
+    question.answers << Answer.create(description: survey_ans[count][0])
+    question.answers << Answer.create(description: survey_ans[count][1])
   end
 end
+
+Survey.all.each do |survey|
+  survey.update(user_id: count)
+  count += 1
 end
+
+# Survey.all.each do |survey|
+#   survey.questions.each do |question|
+#   num_questions.times do |i|
+#     question.answers << Answer.create(description: survey_ans[i][0])
+#     question.answers << Answer.create(description: survey_ans[i][1])
+#   end
+# end
+# end
 
 # count = 0
 # Survey.all.each do |survey|
@@ -76,11 +89,8 @@ end
 #   count += 1
 # end
 
-@new_count = 1
-Survey.all.each do |survey|
-  survey.update(user_id: @new_count)
-  @new_count += 1
-end
+
+
 
 # Survey.all.each do |survey|
 #   num_questions.times do |i|
