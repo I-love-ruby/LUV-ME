@@ -3,8 +3,9 @@ post '/login' do
 
   if @user.try(:authenticate, params[:user][:password])
     session[:user_id] = @user.id
+    erb :home
   end
-  erb :home
+  redirect "/"
 end
 
 post '/signup' do
