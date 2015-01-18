@@ -47,16 +47,45 @@ survey_qs = ["Tupac or Biggie?", "Pink or Pink?", "Left-handed or Right-handed?"
 survey_ans = [["Tupac","Biggie"],["Pink","Pinker Pink"],["Left-handed", "Right-handed"],["Cats","Dogs"],["Coffee","Tea"]]
 
 
-Survey.create(title: "Initial Survey")
-
-10.times do  |i|
-  Survey.first.questions.create(description: survey_qs[i])
-end
-
+# 10.times{ |i| Survey.first.questions.create(description: survey_qs[i]) }
 num_questions = survey_qs.length
 
-num_questions.times do |i|
-  Survey.first.questions.find(i + 1).answers.create(description: survey_ans[i][0])
-  Survey.first.questions.find(i + 1).answers.create(description: survey_ans[i][1])
+10.times{ |i| Survey.create(title: "Initial Survey") }
+
+Survey.all.each do |survey|
+  num_questions.times do |i|
+    survey.questions << Question.create(description: survey_qs[i])
+  end
 end
+
+Survey.all.each do |survey|
+  survey.questions.each do |question|
+  num_questions.times do |i|
+    question.answers << Answer.create(description: "whatever")
+    question.answers << Answer.create(description: "your mom")
+  end
+end
+end
+
+# count = 0
+# Survey.all.each do |survey|
+#   survey.questions.each do |question|
+#     question.answers.create(description: survey_ans[count][0])
+#     question.answers.create(description: survey_ans[count][1])
+#   end
+#   count += 1
+# end
+
+@new_count = 1
+Survey.all.each do |survey|
+  survey.update(user_id: @new_count)
+  @new_count += 1
+end
+
+# Survey.all.each do |survey|
+#   num_questions.times do |i|
+#     survey.questions.find(i + 1).answers.create(description: survey_ans[i][0])
+#     survey.questions.find(i + 1).answers.create(description: survey_ans[i][1])
+#   end
+# end
 
