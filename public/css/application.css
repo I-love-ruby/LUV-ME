@@ -159,6 +159,12 @@ img {
     width: auto;
 }
 
+/*
+img.resize{
+    width:100px;  you can use %
+    height: auto;
+}*/
+
 .all_img {
   display: inline;
 }
@@ -290,3 +296,4 @@ ul {
   padding-left: 500px;
   padding-top: 20px;
 }
+
