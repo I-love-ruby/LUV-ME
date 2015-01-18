@@ -4,7 +4,7 @@
   <%= question.description %>
   <% question.answers.each do |answer| %>
     <ul>
-      <li><input type="radio" name="answer[<%= question.id %>]" value="<%= answer.id %>"><%= answer.description %></li>
+      <li><input type="radio" name="answer[<%= question.id %>]" value="<%= answer.id %>"><p><%= answer.description %></p></li>
     </ul>
   <% end %>
 <% end %>
