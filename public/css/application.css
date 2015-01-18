@@ -208,3 +208,23 @@ ul {
   float: left;
   padding-right: 20px;
 }
+
+.profile {
+  width: 700px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.profile_left {
+  float: left;
+  padding-right: 20px;
+}
+
+.matches {
+  float: right;
+  font-size: 30px;
+}
+
+.matches_header {
+  border-bottom: 3px dotted #FFFFFF;
+}
