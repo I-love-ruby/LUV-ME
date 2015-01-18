@@ -1,8 +1,27 @@
+body {
+  background-color: #a8efe9;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFF;
+}
+
+a:link, a:visited {
+    color: #FFF;
+    text-decoration: none;
+    cursor: auto;
+}
+
+a:link:active, a:visited:active {
+    color: #FFF;
+}
+
+a:hover {
+  color: #FF5DBF;
+}
+
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+ width: 80%;
+ margin: auto;
+ padding-top: 80px;
 }
 
 th {
@@ -24,7 +43,7 @@ th {
 
 #signup {
   width: 404px;
-  padding-bottom: 2px;
+  padding: 20px;
   display: none;
   background: #FFF;
   border-radius: 5px;
@@ -33,12 +52,13 @@ th {
   box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
   -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
   -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+  color: #000000;
 }
 
 
 #login {
   width: 404px;
-  padding-bottom: 2px;
+  padding: 20px;
   display: none;
   background: #FFF;
   border-radius: 5px;
@@ -47,6 +67,30 @@ th {
   box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
   -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
   -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+  color: #000000;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
+
+input {
+  display: inline-block;
+  float: left;
+  border: 1px solid #006;
+}
+
+.txt-fld {
+  padding-top: 10px;
+}
+
+.btn-fld {
+  float: right;
+  clear: both;
 }
 
 .modal_close {
@@ -58,4 +102,24 @@ width: 14px;
 height: 14px;
 background: url(http://leanmodal.finelysliced.com.au/img/modal_close.png);
 z-index: 2;
+}
+
+
+#header {
+  background-color: #7de7de;
+  margin: 0;
+  color: #FFF;
+  padding: 10px 20px 10px 20px;
+  overflow: auto;
+}
+
+big {
+  font-size: 150px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 0;
+}
+
+small {
+  font-size: 15px;
 }
