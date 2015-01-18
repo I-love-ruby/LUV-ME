@@ -48,7 +48,7 @@ end
 # Survey routes
 get '/user/:id/survey' do |id|
   @user = User.find(id)
-  @survey = Survey.find(1)
+  @survey = Survey.find(id)
   @questions = @survey.questions
   erb :'/user/survey'
 end
@@ -71,5 +71,10 @@ end
 get '/user/:id' do
   @user = User.find_by(id: params[:id])
   erb :'user/user_profile'
+end
+
+get '/user/:id/matches' do
+  @users = User.all
+  erb :'/user/matches'
 end
 
