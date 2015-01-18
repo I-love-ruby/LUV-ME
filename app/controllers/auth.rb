@@ -9,7 +9,7 @@ post '/login' do
 end
 
 post '/signup' do
-  user = User.create(params[:user])
+  user = User.new(params[:user])
   if user.save
     session[:user_id] = user.id
     redirect "/user/#{user.id}/edit"
