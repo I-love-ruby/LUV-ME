@@ -20,5 +20,6 @@ class User < ActiveRecord::Base
 
   validates :name, presence:true
   validates :email, presence:true
+  validates :email, format: {with: /[1-9]*[a-z]*\d*@[a-zA-z]*.[a-z]{3}/}
 
 end
