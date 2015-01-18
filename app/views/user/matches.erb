@@ -1,0 +1,9 @@
+<div class ="current_user_matches">
+  <% @users.each do |user| %>
+  <ul>
+    <div class="all_img">
+      <li><a href="/user/<%= user.id %>"><img src="<%= user.pic_url %>" width="100" height="100" alt="<%= user.name %>"/></a></li>
+    </div>
+  </ul>
+  <% end %>
+</div>
