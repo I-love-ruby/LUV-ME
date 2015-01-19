@@ -19,4 +19,30 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
+  #======== MATCHER ALGORITHIM =========
+
+#returns an array of the current user's answer_ids
+  def user_survey_answers
+    self.selections.map{ |selection| selection.answer_id }
+  end
+
+  def all_others_survey_answers(class_name)
+    class_name.all.map do |obj|
+      {obj.id => [obj.user_survey_answers]}
+    end
+  end
+
+  def create_matches
+
+  end
+
 end
+
+
+#====== this worked in the console ======
+
+=begin
+test = User.all.map do |this_user|
+{this_user.id => this_user.selections.map{|sel| sel.answer_id}}
+end
+=end
