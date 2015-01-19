@@ -17,6 +17,6 @@ class User < ActiveRecord::Base
   has_many :relationships, through: :desires
 
   validates :name, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: {with: /[a-zA-Z]*[1-9]*@[a-z]*.[a-z]{3}/}
 
 end
