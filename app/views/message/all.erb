@@ -1,36 +1,28 @@
 <div class="messages">
   <div class="received_messages">
-  <h1>Received LUV <font color="#FF5DBF">♥</font></h1>
-  <% @user.received_messages.each do |received_message| %>
-  <h4>From: <a href="/user/<%= received_message.sender.id %>"><%= received_message.sender.name %></a></h4>
-  <%= received_message.content %><br />
+    <h1>Received LUV <font color="#FF5DBF">♥</font></h1>
+    <% @user.received_messages.each do |received_message| %>
+    <h4>From: <a href="/user/<%= received_message.sender.id %>"><%= received_message.sender.name %></a></h4>
+      <%= received_message.content %><br />
     <div class="replybox">
-     <a href="#" class="replylink">Reply?</a>
-     <div class="replyform">
+      <a href="#" class="replylink">Reply?</a>
+      <div class="replyform">
         <form action="/user/<%= @user.id %>/reply" method="POST">
-        <input type="hidden" name="reply[receiver_id]" value="<%= received_message.sender.id %>">
-        <input type="text" name="reply[content]"/>
-        <input type="submit" value="Send">
-     </div>
+          <input type="hidden" name="reply[receiver_id]" value="<%= received_message.sender.id %>">
+          <input type="text" name="reply[content]"/>
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </div>
+    <div class="message_border"></div>
+      <% end %>
   </div>
-  <div class="message_border"></div>
-  <% end %>
-</div>
-<div class="sent_messages">
-  <h1>Sent LUV <font color="#FF5DBF">♥</font></h1>
-  <% @user.sent_messages.each do |sent_message| %>
-  <h4>To: <a href="/user/<%= sent_message.receiver.id %>"><%= sent_message.receiver.name %></a></h4>
-  <%= sent_message.content %><br />
-    <div class="replybox">
-     <a href="#" class="replylink">Reply?</a>
-     <div class="replyform">
-        <form action="/user/<%= @user.id %>/reply" method="POST">
-        <input type="hidden" name="reply[receiver_id]" value="<%= sent_message.receiver.id %>">
-        <input type="text" name="reply[content]"/>
-        <input type="submit" value="Send">
-     </div>
+  <div class="sent_messages">
+    <h1>Sent LUV <font color="#FF5DBF">♥</font></h1>
+    <% @user.sent_messages.each do |sent_message| %>
+    <h4>To: <a href="/user/<%= sent_message.receiver.id %>"><%= sent_message.receiver.name %></a></h4>
+    <%= sent_message.content %><br />
+    <div class="message_border"></div>
+    <% end %>
   </div>
-  <div class="message_border"></div>
-  <% end %>
-</div>
 </div>
