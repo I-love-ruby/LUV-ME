@@ -50,12 +50,16 @@ num_questions = survey_qs.length
 
 10.times{ |i| Survey.create(title: "Initial Survey") }
 
+# answer_objs = survey_ans.map do |ans|
+#   Answer.create(description: ans[0])
+#   Answer.create(description: ans[1])
+# end
+
 Survey.all.each do |survey|
   num_questions.times do |i|
     survey.questions << Question.create(description: survey_qs[i])
   end
 end
-
 
 Survey.all.each do |survey|
   count = 0
@@ -65,6 +69,16 @@ Survey.all.each do |survey|
     count += 1
   end
 end
+
+
+# Survey.all.each do |survey|
+#   count = 0
+#   survey.questions.each do |question|
+#     question.answers << Answer.create(description: survey_ans[count][0])
+#     question.answers << Answer.create(description: survey_ans[count][1])
+#     count += 1
+#   end
+# end
 
 count = 1
 Survey.all.each do |survey|
