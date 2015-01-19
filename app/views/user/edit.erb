@@ -1,10 +1,16 @@
 <div class="edit_user_profile">
 <form action="/user/<%= @user.id%>" method="POST">
-  <input type="hidden" name="_method" value="PUT"><br>
-  NAME:<input type="text" name="user[name]" value="<%=@user.name %>"><br>
-  AGE: <input type="text" name="user[age]" value="<%=@user.age %>"><br>
+  <input type="hidden" name="_method" value="PUT"><br /><br />
 
-  GENDER:
+  <label>NAME <font color="#FF5DBF">♥</font></label> <input type="text" name="user[name]" value="<%=@user.name %>">
+  <br /><br /><br />
+
+  <div class="txt-fld">
+  <label>AGE <font color="#FF5DBF">♥</font></label> <input type="text" name="user[age]" value="<%=@user.age %>">
+  <br /><br /><br />
+
+  <div class="txt-fld">
+  <label>GENDER <font color="#FF5DBF">♥</font></label>
     <select id="gender_dropdown" name="user[gender]">
       <option value=""></option>
       <option value="Cis Female">Cis Female</option>
@@ -14,9 +20,9 @@
       <option value="None of these">None of these</option>
       <option value="Prefer not to say">Prefer not to say</option>
     </select>
-  <br>
+    <br /><br />
 
-ORIENTATION
+<label>ORIENTATION <font color="#FF5DBF">♥</font></label>
   <select id="orientation_dropdown" name="user[orientation]">
       <option value=""></option>
         <% @orientations = ["Lesbian","Gay","Bisexual","Pansexual", "Straight", "Asexual", "Prefer not to Say"] %>
@@ -24,12 +30,14 @@ ORIENTATION
           <option value="<%= orientation %>"><%= orientation %></option>
         <% end %>
       </select>
-    <br>
+      <br /><br />
 
-
-
-  LOCATION:<input type="text" name="user[location]" value="<%=@user.location %>"><br>
-  EMAIL:<input type="text" name="user[email]" value="<%=@user.email %>">
+  <label>LOCATION <font color="#FF5DBF">♥</font></label><input type="text" name="user[location]" value="<%=@user.location %>">
+  <br /><br /><br />
+  <label>EMAIL <font color="#FF5DBF">♥</font></label><input type="text" name="user[email]" value="<%=@user.email %>">
+  <br /><br /><br />
+  <label>PIC URL <font color="#FF5DBF">♥</font></label><input type="text" name="user[pic_url]" value="<%=@user.pic_url %>">
+  <br /><br /><br />
   <input type="submit">
 </form>
 </div>

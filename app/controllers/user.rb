@@ -1,24 +1,3 @@
-post '/login' do
-  user = User.find_by(name: params[:user][:email])
-
-  if user.try(:authenticate, params[:user][:password])
-    session[:user_id] = user.id
-  end
-  redirect "/"
-end
-
-post '/signup' do
-  user = User.create(params[:user])
-  if user.save
-    session[:user_id] = user.id
-  end
-  redirect "/"
-end
-
-get '/signout' do
-  session[:user_id] = nil
-  redirect '/'
-end
 
 #update(edit) a user profile
 get '/user/:id/edit' do
@@ -27,27 +6,50 @@ get '/user/:id/edit' do
 end
 
 put '/user/:id' do |id|
-  user = User.find(id)
-  user.update(params[:user])
-  redirect("/user/#{user.id}/home")
+  @user = User.find(id)
+  @user.update(params[:user])
+  erb :home
 end
 
-delete '/user/:id' do |id|
+
+get '/user/:id/delete' do |id|
+  @user = User.find(id)
+  erb :delete
+end
+
+delete '/user/:id/delete' do |id|
   User.find(id).destroy
   redirect('/')
 end
 
+# messages
+get '/user/:id/messages' do |id|
+  @user = User.find(id)
+  erb :'/message/all'
+end
 
+get '/user/:id/reply' do |id|
+  @sender = User.find(id)
+  erb :'/message/reply'
+end
+
+post '/user/:id/reply' do |id|
+  sender = User.find(id)
+  sender.sent_messages.create(params[:reply])
+  redirect "/user/#{sender.id}/messages"
+end
 # Dashboard
 
-get '/user/:id/home' do
+get '/user/:id/home' do |id|
+  @user = User.find(id)
   erb :home
 end
 
 # Survey routes
 get '/user/:id/survey' do |id|
   @user = User.find(id)
-  @survey = Survey.find(1)
+  # @survey = Survey.find(id)
+  @survey = Survey.where(id: id).first_or_create
   @questions = @survey.questions
   erb :'/user/survey'
 end
@@ -58,5 +60,22 @@ post '/user/:id/survey' do |id|
   params[:answer].each do |k, v|
     @user.selections.find_or_create_by(answer_id: v)
   end
-  redirect "/user/#{@user.id}/home"
+  erb :home
 end
+
+
+get '/user/all' do
+  @users = User.all
+  erb :'/user/all'
+end
+
+get '/user/:id' do
+  @user = User.find_by(id: params[:id])
+  erb :'user/user_profile'
+end
+
+get '/user/:id/matches' do
+  @users = User.all
+  erb :'/user/matches'
+end
+

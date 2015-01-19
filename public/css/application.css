@@ -81,7 +81,8 @@ label{
 input {
   display: inline-block;
   float: left;
-  border: 1px solid #006;
+  border: 1px solid #000;
+  background-color: #ffeef8;
 }
 
 .txt-fld {
@@ -122,4 +123,182 @@ big {
 
 small {
   font-size: 15px;
+}
+
+.edit_user_profile {
+  width: 300px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.dashboard {
+  width: 700px;
+  font-size: 30px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+
+.profile_pic {
+width: 200px;
+height: 200px;
+position: relative;
+overflow: hidden;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+border-radius: 50%;
+border: 5px solid #FFFFFF;
+}
+
+img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
+
+.all_img {
+  display: inline;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+
+.delete_account form input[type="submit"]{
+
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.delete_account form input[type="submit"]:hover{
+    color: #FF5DBF
+}
+
+.delete_account {
+  width: 500px;
+  font-size: 30px;
+  margin: auto;
+  padding: 50px;
+}
+
+
+.user_welcome {
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+.u_r_luvd {
+  font-weight: 700;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.left_dashboard {
+  float: left;
+  padding-right: 20px;
+}
+
+.profile {
+  width: 700px;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.profile_left {
+  float: left;
+  padding-right: 20px;
+  width: 300px;
+}
+
+.matches {
+  float: right;
+  font-size: 30px;
+}
+
+.matches_header {
+  border-bottom: 3px dotted #FFFFFF;
+}
+
+.all {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  display: inline;
+}
+
+.replybox {
+  text-align: right;
+  padding: 10px;
+}
+
+.replybox .replyform {
+  display:none;
+  padding: 10px;
+  }
+
+.sendbox {
+  padding: 10px;
+}
+
+.sendbox .sendform {
+  display:none;
+  padding: 10px;
+  }
+
+.messages {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.sent_messages {
+  float:right;
+  width: 300px;
+}
+
+.received_messages {
+  float: left;
+  width: 300px;
+  border-right: 1px dotted #FFFFFF;
+  height: 100%;
+  padding-right: 50px;
+}
+
+.message_border {
+  border-bottom: 1px dotted #FFFFFF;
+  width: 300px;
+}
+
+.survey {
+  margin: 0 auto;
+  padding-left: 500px;
+  padding-top: 20px;
+}
+
+
+/*MATCHER PARTIAL*/
+
+.current_user_matches {
+
+  /*border: 1px solid black;*/
+  width: 310px;
+  float: right;
+  clear: left;
+  padding: 0px;
 }

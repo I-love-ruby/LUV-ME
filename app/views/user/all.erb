@@ -1,0 +1,8 @@
+<div class="all">
+  <br /><br />
+  <% @users.each do |user| %>
+    <div class="all_img">
+      <a href="/user/<%= user.id %>"><img src="<%= user.pic_url %>" width="100" height="100" alt="<%= user.name %>"/></a>
+    </div>
+  <% end %>
+</div>
