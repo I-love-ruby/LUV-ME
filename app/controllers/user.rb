@@ -49,7 +49,7 @@ end
 get '/user/:id/survey' do |id|
   @user = User.find(id)
   # @survey = Survey.find(id)
-  @survey = Survey.where(id: id).first_or_create
+  @survey = Survey.find_or_create_by(id: id, user_id: id)
   @questions = @survey.questions
   erb :'/user/survey'
 end
