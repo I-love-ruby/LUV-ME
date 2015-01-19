@@ -1,3 +1,4 @@
+<% if current_user.id == @user.id %>
 <div class="delete_account">
 Are you sure you want to delete your account?
 <form action="/user/<%= @user.id %>/delete" method="POST">
@@ -6,3 +7,6 @@ Are you sure you want to delete your account?
     » <a href="/user/<%= @user.id %>/home">No, please keep LUV-ING me.</a>
 </form>
 </div>
+<% else %>
+<% redirect "/" %>
+<% end %>

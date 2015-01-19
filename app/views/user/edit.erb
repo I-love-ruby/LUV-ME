@@ -1,3 +1,4 @@
+<% if current_user.id == @user.id %>
 <div class="edit_user_profile">
 <form action="/user/<%= @user.id%>" method="POST">
   <input type="hidden" name="_method" value="PUT"><br /><br />
@@ -42,3 +43,7 @@
 </form>
 </div>
 
+<% else %>
+<% redirect "/" %>
+
+<% end %>
