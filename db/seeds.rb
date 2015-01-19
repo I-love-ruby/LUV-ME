@@ -56,16 +56,40 @@ Survey.all.each do |survey|
   end
 end
 
-count = 0
+
 Survey.all.each do |survey|
+  count = 0
   survey.questions.each do |question|
     question.answers << Answer.create(description: survey_ans[count][0])
     question.answers << Answer.create(description: survey_ans[count][1])
+    count += 1
   end
 end
 
+count = 1
 Survey.all.each do |survey|
   survey.update(user_id: count)
   count += 1
 end
 
+#=====TESTS=======
+
+# Survey.all.each{|survey| p survey}
+
+# Survey.all.each do |survey|
+#   survey.questions.each do |question|
+#     p question.description
+#   end
+# end
+
+
+# Survey.all.each do |survey|
+#   count = 0
+#   survey.questions.each do |question|
+#     question.answers.each do |ans|
+#        ans.update(description: survey_ans[count][0])
+#        ans.update(description: survey_ans[count][1])
+#     end
+#     count += 1
+#   end
+# end
