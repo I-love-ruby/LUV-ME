@@ -34,9 +34,8 @@ get '/user/:id/reply' do |id|
 end
 
 post '/user/:id/reply' do |id|
-  sender = User.find(id)
-  sender.sent_messages.create(params[:reply])
-  redirect "/user/#{sender.id}/messages"
+  current_user.sent_messages.create(params[:reply])
+  redirect "/user/#{current_user.id}/messages"
 end
 # Dashboard
 
@@ -48,7 +47,8 @@ end
 # Survey routes
 get '/user/:id/survey' do |id|
   @user = User.find(id)
-  @survey = Survey.find(1)
+  # @survey = Survey.find(id)
+  @survey = Survey.where(id: id).first_or_create
   @questions = @survey.questions
   erb :'/user/survey'
 end
@@ -71,5 +71,10 @@ end
 get '/user/:id' do
   @user = User.find_by(id: params[:id])
   erb :'user/user_profile'
+end
+
+get '/user/:id/matches' do
+  @users = User.all
+  erb :'/user/matches'
 end
 

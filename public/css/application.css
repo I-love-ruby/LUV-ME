@@ -290,3 +290,16 @@ ul {
   padding-left: 500px;
   padding-top: 20px;
 }
+
+
+
+/*MATCHER PARTIAL*/
+
+.current_user_matches {
+
+  /*border: 1px solid black;*/
+  width: 310px;
+  float: right;
+  clear: left;
+  padding: 0px;
+}
