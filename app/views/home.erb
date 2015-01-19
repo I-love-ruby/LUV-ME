@@ -1,3 +1,4 @@
+<% if current_user.id == @user.id %>
 <div class="dashboard">
 <div class="left_dashboard">
   <div class="profile_pic"><img src="<%= @user.pic_url %>"></div>
@@ -12,3 +13,6 @@
 <li><font color="#e30000">☓</font> <a href="/user/<%=@user.id%>/delete">DELETE YOUR ACCOUNT</a> </li>
 </ul>
 </div>
+<% else %>
+<% redirect "/" %>
+<% end %>

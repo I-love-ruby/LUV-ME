@@ -159,12 +159,6 @@ img {
     width: auto;
 }
 
-/*
-img.resize{
-    width:100px;  you can use %
-    height: auto;
-}*/
-
 .all_img {
   display: inline;
 }
