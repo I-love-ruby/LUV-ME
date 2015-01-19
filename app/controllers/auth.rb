@@ -5,17 +5,17 @@ post '/login' do
     session[:user_id] = @user.id
     erb :home
   end
-  set_error('Login Failed.')
+  set_error('Login Failed, Please Try Again')
   redirect "/"
 end
 
 post '/signup' do
-  user = User.new(params[:user])
+  user = User.create(params[:user])
   if user.valid?
     session[:user_id] = user.id
     redirect "/user/#{user.id}/edit"
   else
-    set_error('Signup failed.')
+    set_error('Signup failed, Please Try Again')
     redirect "/"
   end
 end
