@@ -26,9 +26,11 @@ class User < ActiveRecord::Base
     self.selections.map{ |selection| selection.answer_id }
   end
 
-  def all_others_survey_answers(class_name)
-    class_name.all.map do |obj|
-      {obj.id => [obj.user_survey_answers]}
+  #returns an array of hashes containing survey answer_ids for every user
+
+  def self.all_others_survey_answers
+    self.all.map do |obj|
+      {obj.id => obj.user_survey_answers}
     end
   end
 
