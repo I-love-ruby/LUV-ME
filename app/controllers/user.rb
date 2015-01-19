@@ -34,9 +34,8 @@ get '/user/:id/reply' do |id|
 end
 
 post '/user/:id/reply' do |id|
-  sender = User.find(id)
-  sender.sent_messages.create(params[:reply])
-  redirect "/user/#{sender.id}/messages"
+  current_user.sent_messages.create(params[:reply])
+  redirect "/user/#{current_user.id}/messages"
 end
 # Dashboard
 

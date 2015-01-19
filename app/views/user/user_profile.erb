@@ -27,6 +27,7 @@
        <a href="#" class="sendlink">SEND ME A MESSAGE</a>
        <div class="sendform">
           <form action="/user/<%= @user.id %>/reply" method="POST">
+          <input type="hidden" name="reply[sender_id]" value="<%= current_user.id %>">
           <input type="hidden" name="reply[receiver_id]" value="<%= @user.id %>">
           <textarea type="text" name="reply[content]"/></textarea><br /><br />
           <input type="submit" value="Send">
