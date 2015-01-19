@@ -26,23 +26,6 @@ end
 
 ### SEED SURVEY QUESTIONS ###
 
-# survey = Survey.create(title: "Initial Survey")
-# survey.questions.create(description: "Tupac or Biggie?")
-# survey.questions.find(1).answers.create(description: "Tupac")
-# survey.questions.find(1).answers.create(description: "Biggie")
-# survey.questions.create(description: "Pink or Pink?")
-# survey.questions.find(2).answers.create(description:  "Pink")
-# survey.questions.find(2).answers.create(description:"Pinker Pink")
-# survey.questions.create(description: "Left-handed or Right-handed?")
-# survey.questions.find(3).answers.create(description: "Left-handed")
-# survey.questions.find(3).answers.create(description: "Right-handed")
-# survey.questions.create(description: "Cats or Dogs?")
-# survey.questions.find(4).answers.create(description: "Cats")
-# survey.questions.find(4).answers.create(description: "Dogs")
-# survey.questions.create(description: "Coffee or Tea?")
-# survey.questions.find(5).answers.create(description: "Coffee")
-# survey.questions.find(5).answers.create(description: "Tea")
-
 survey_qs = ["Tupac or Biggie?", "Pink or Pink?", "Left-handed or Right-handed?", "Cats or Dogs?", "Coffee or Tea?"]
 survey_ans = [["Tupac","Biggie"],["Pink","Pinker Pink"],["Left-handed", "Right-handed"],["Cats","Dogs"],["Coffee","Tea"]]
 
@@ -68,4 +51,22 @@ Survey.all.each do |survey|
   survey.update(user_id: count)
   count += 1
 end
+
+survey = Survey.create(title: "Initial Survey")
+survey.questions.create(description: "Tupac or Biggie?")
+survey.questions.find(1).answers.create(description: "Tupac")
+survey.questions.find(1).answers.create(description: "Biggie")
+survey.questions.create(description: "Pink or Pink?")
+survey.questions.find(2).answers.create(description:  "Pink")
+survey.questions.find(2).answers.create(description:"Pinker Pink")
+survey.questions.create(description: "Left-handed or Right-handed?")
+survey.questions.find(3).answers.create(description: "Left-handed")
+survey.questions.find(3).answers.create(description: "Right-handed")
+survey.questions.create(description: "Cats or Dogs?")
+survey.questions.find(4).answers.create(description: "Cats")
+survey.questions.find(4).answers.create(description: "Dogs")
+survey.questions.create(description: "Coffee or Tea?")
+survey.questions.find(5).answers.create(description: "Coffee")
+survey.questions.find(5).answers.create(description: "Tea")
+
 
